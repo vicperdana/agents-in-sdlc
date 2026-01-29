@@ -257,6 +257,7 @@
 </style>
 
 <script>
+{% raw %}
 (function() {
   function createToggle() {
     // Check if already exists
@@ -272,7 +273,7 @@
     // Get saved theme or default to dark
     var savedTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
-    toggleBtn.innerHTML = savedTheme === 'dark' ? '☀️' : '🌙';
+    toggleBtn.textContent = savedTheme === 'dark' ? '\u2600\uFE0F' : '\uD83C\uDF19';
 
     // Toggle handler
     toggleBtn.onclick = function() {
@@ -280,7 +281,7 @@
       var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
-      toggleBtn.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
+      toggleBtn.textContent = newTheme === 'dark' ? '\u2600\uFE0F' : '\uD83C\uDF19';
     };
 
     document.body.appendChild(toggleBtn);
@@ -295,4 +296,5 @@
   // Fallback
   window.addEventListener('load', createToggle);
 })();
+{% endraw %}
 </script>
