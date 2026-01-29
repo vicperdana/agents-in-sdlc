@@ -74,3 +74,4 @@ msbuild.wrn
 docs/_site/
 docs/Gemfile.lock
 docs/.jekyll-cache/
+.jekyll-cache/
