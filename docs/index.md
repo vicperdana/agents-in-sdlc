@@ -18,12 +18,12 @@ The recent additions to the capabilities of GitHub Copilot provide powerful tool
 
 | Exercise | Description |
 |----------|-------------|
-| [0. Prerequisites](labs/0-prereqs) | Setup the environment |
-| [1. Copilot Coding Agent](labs/1-copilot-coding-agent) | Assign issues to GitHub Copilot coding agent to work asynchronously |
-| [2. MCP](labs/2-mcp) | Configure and interact with external services through Model Context Protocol |
-| [3. Custom Instructions](labs/3-custom-instructions) | Provide context to Copilot through custom instructions and prompt files |
-| [4. Agent Mode in VS Code](labs/4-copilot-agent-mode-vscode) | Complete a site-wide update with Copilot agent mode |
-| [5. Reviewing Coding Agent](labs/5-reviewing-coding-agent) | Review Copilot coding agent's work |
+| [0. Prerequisites](labs/0-prereqs.html) | Setup the environment |
+| [1. Copilot Coding Agent](labs/1-copilot-coding-agent.html) | Assign issues to GitHub Copilot coding agent to work asynchronously |
+| [2. MCP](labs/2-mcp.html) | Configure and interact with external services through Model Context Protocol |
+| [3. Custom Instructions](labs/3-custom-instructions.html) | Provide context to Copilot through custom instructions and prompt files |
+| [4. Agent Mode in VS Code](labs/4-copilot-agent-mode-vscode.html) | Complete a site-wide update with Copilot agent mode |
+| [5. Reviewing Coding Agent](labs/5-reviewing-coding-agent.html) | Review Copilot coding agent's work |
 
 ## Scenario
 
@@ -31,4 +31,4 @@ The lab envisions you as a new developer for Tailspin Toys, a fictional company 
 
 ## Get Started
 
-OK, let's [get going by starting with the setup](labs/0-prereqs)!
+OK, let's [get going by starting with the setup](labs/0-prereqs.html)!

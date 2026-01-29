@@ -1,91 +1,298 @@
 <style>
-/* Theme toggle button */
+/* Theme toggle button - positioned top-right for visibility */
 .theme-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1000;
-  background: var(--body-background-color);
-  border: 1px solid var(--border-color);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
+  position: fixed !important;
+  top: 1rem !important;
+  right: 1.5rem !important;
+  z-index: 99999 !important;
+  background: #7253ed !important;
+  border: 2px solid #fff !important;
+  border-radius: 50% !important;
+  width: 48px !important;
+  height: 48px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.4rem !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .theme-toggle:hover {
   transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* Light theme overrides */
-[data-theme="light"] {
-  --body-background-color: #fff;
-  --sidebar-color: #f5f6fa;
-  --body-text-color: #27262b;
-  --body-heading-color: #27262b;
-  --link-color: #7253ed;
-  --border-color: #eeebee;
-  --code-background-color: #f5f6fa;
-  --search-background-color: #fff;
-  --table-background-color: #fff;
-  --feedback-color: #27262b;
+/* Light theme overrides for just-the-docs */
+[data-theme="light"] body,
+[data-theme="light"] .main,
+[data-theme="light"] .main-content-wrap {
+  background-color: #fff !important;
+  color: #27262b !important;
 }
 
-/* Dark theme (default) */
-[data-theme="dark"] {
-  --body-background-color: #27262b;
-  --sidebar-color: #302d36;
-  --body-text-color: #e6e1e8;
-  --body-heading-color: #f5f6fa;
-  --link-color: #897ae3;
-  --border-color: #44434d;
-  --code-background-color: #302d36;
-  --search-background-color: #302d36;
-  --table-background-color: #302d36;
-  --feedback-color: #e6e1e8;
+[data-theme="light"] .side-bar {
+  background-color: #f5f6fa !important;
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] .main-content,
+[data-theme="light"] .site-nav,
+[data-theme="light"] .site-header,
+[data-theme="light"] .site-footer {
+  background-color: #f5f6fa !important;
+  color: #27262b !important;
+}
+
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6,
+[data-theme="light"] .site-title,
+[data-theme="light"] p,
+[data-theme="light"] li,
+[data-theme="light"] td,
+[data-theme="light"] th,
+[data-theme="light"] blockquote {
+  color: #27262b !important;
+}
+
+[data-theme="light"] a {
+  color: #7253ed !important;
+}
+
+[data-theme="light"] .nav-list-link,
+[data-theme="light"] .nav-list-item {
+  color: #27262b !important;
+}
+
+[data-theme="light"] .nav-list-link:hover,
+[data-theme="light"] .nav-list-link.active {
+  background-color: #e8e8e8 !important;
+}
+
+/* Navigation specific fixes */
+[data-theme="light"] .site-nav,
+[data-theme="light"] .site-nav *,
+[data-theme="light"] .nav-list,
+[data-theme="light"] .nav-list *,
+[data-theme="light"] .nav-list-item,
+[data-theme="light"] .nav-list-link,
+[data-theme="light"] .site-nav ul,
+[data-theme="light"] .site-nav li,
+[data-theme="light"] .site-nav a {
+  color: #27262b !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+[data-theme="light"] .side-bar *:not(.theme-toggle) {
+  color: #27262b !important;
+}
+
+[data-theme="light"] .side-bar a {
+  color: #7253ed !important;
+}
+
+[data-theme="light"] .nav-list-link:hover {
+  background-color: #e8e8e8 !important;
+}
+
+[data-theme="light"] .nav-list-expander,
+[data-theme="light"] .nav-list-expander svg {
+  color: #27262b !important;
+}
+
+[data-theme="light"] .breadcrumb-nav,
+[data-theme="light"] .breadcrumb-nav-list,
+[data-theme="light"] .breadcrumb-nav-list-item {
+  color: #27262b !important;
+}
+
+[data-theme="light"] .search-input {
+  background-color: #fff !important;
+  color: #27262b !important;
+  border-color: #ddd !important;
+}
+
+[data-theme="light"] .search-results {
+  background-color: #fff !important;
+  color: #27262b !important;
+}
+
+[data-theme="light"] code {
+  background-color: #f0f0f0 !important;
+  color: #27262b !important;
+}
+
+[data-theme="light"] pre {
+  background-color: #f5f5f5 !important;
+}
+
+/* Code highlighting fixes */
+[data-theme="light"] .highlight,
+[data-theme="light"] .highlighter-rouge,
+[data-theme="light"] .language-plaintext,
+[data-theme="light"] .language-markdown,
+[data-theme="light"] .language-yaml,
+[data-theme="light"] .language-json,
+[data-theme="light"] .language-bash,
+[data-theme="light"] .language-shell,
+[data-theme="light"] .language-javascript,
+[data-theme="light"] .language-python {
+  background-color: #f5f5f5 !important;
+}
+
+[data-theme="light"] .highlight pre,
+[data-theme="light"] .highlighter-rouge pre,
+[data-theme="light"] .highlight code,
+[data-theme="light"] .highlighter-rouge code,
+[data-theme="light"] pre code,
+[data-theme="light"] pre.highlight {
+  background-color: #f5f5f5 !important;
+  color: #27262b !important;
+}
+
+[data-theme="light"] .highlight pre code,
+[data-theme="light"] .highlighter-rouge pre code {
+  color: #27262b !important;
+}
+
+/* Rouge syntax highlighting for light theme */
+[data-theme="light"] .highlight .k,
+[data-theme="light"] .highlight .kd,
+[data-theme="light"] .highlight .kn,
+[data-theme="light"] .highlight .kp,
+[data-theme="light"] .highlight .kr,
+[data-theme="light"] .highlight .kt {
+  color: #d73a49 !important;
+}
+
+[data-theme="light"] .highlight .s,
+[data-theme="light"] .highlight .s1,
+[data-theme="light"] .highlight .s2,
+[data-theme="light"] .highlight .se {
+  color: #032f62 !important;
+}
+
+[data-theme="light"] .highlight .c,
+[data-theme="light"] .highlight .c1,
+[data-theme="light"] .highlight .cm {
+  color: #6a737d !important;
+}
+
+[data-theme="light"] .highlight .n,
+[data-theme="light"] .highlight .na,
+[data-theme="light"] .highlight .nb,
+[data-theme="light"] .highlight .nc,
+[data-theme="light"] .highlight .nf,
+[data-theme="light"] .highlight .nn,
+[data-theme="light"] .highlight .nv {
+  color: #005cc5 !important;
+}
+
+[data-theme="light"] .main-header {
+  background-color: #fff !important;
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] table,
+[data-theme="light"] .table-wrapper {
+  background-color: #fff !important;
+}
+
+/* Table specific fixes */
+[data-theme="light"] table thead,
+[data-theme="light"] table tbody,
+[data-theme="light"] table tr {
+  background-color: #fff !important;
+}
+
+[data-theme="light"] table th {
+  background-color: #f5f6fa !important;
+  color: #27262b !important;
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] table td {
+  background-color: #fff !important;
+  color: #27262b !important;
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] table td a {
+  color: #7253ed !important;
+}
+
+[data-theme="light"] table th,
+[data-theme="light"] table td {
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] hr {
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] .anchor-heading {
+  color: #7253ed !important;
+}
+
+[data-theme="light"] .theme-toggle {
+  background: #27262b !important;
 }
 
 @media (max-width: 800px) {
   .theme-toggle {
     top: 0.5rem;
     right: 0.5rem;
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
   }
 }
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Create toggle button
-  const toggleBtn = document.createElement('button');
-  toggleBtn.className = 'theme-toggle';
-  toggleBtn.setAttribute('aria-label', 'Toggle dark/light mode');
-  toggleBtn.innerHTML = '🌙';
-  document.body.appendChild(toggleBtn);
+(function() {
+  function createToggle() {
+    // Check if already exists
+    if (document.querySelector('.theme-toggle')) return;
 
-  // Get saved theme or default to dark
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  updateIcon(savedTheme);
+    // Create toggle button
+    var toggleBtn = document.createElement('button');
+    toggleBtn.className = 'theme-toggle';
+    toggleBtn.setAttribute('aria-label', 'Toggle dark/light mode');
+    toggleBtn.setAttribute('type', 'button');
+    toggleBtn.style.cssText = 'position:fixed!important;top:1rem!important;right:1.5rem!important;z-index:99999!important;background:#7253ed!important;border:2px solid #fff!important;border-radius:50%!important;width:48px!important;height:48px!important;cursor:pointer!important;display:flex!important;align-items:center!important;justify-content:center!important;font-size:1.4rem!important;';
 
-  // Toggle handler
-  toggleBtn.addEventListener('click', function() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateIcon(newTheme);
-  });
+    // Get saved theme or default to dark
+    var savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    toggleBtn.innerHTML = savedTheme === 'dark' ? '☀️' : '🌙';
 
-  function updateIcon(theme) {
-    toggleBtn.innerHTML = theme === 'dark' ? '☀️' : '🌙';
+    // Toggle handler
+    toggleBtn.onclick = function() {
+      var currentTheme = document.documentElement.getAttribute('data-theme');
+      var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      toggleBtn.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
+    };
+
+    document.body.appendChild(toggleBtn);
   }
-});
+
+  // Try multiple methods to ensure button is created
+  if (document.body) {
+    createToggle();
+  } else {
+    document.addEventListener('DOMContentLoaded', createToggle);
+  }
+  // Fallback
+  window.addEventListener('load', createToggle);
+})();
 </script>
