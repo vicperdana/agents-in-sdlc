@@ -1,0 +1,91 @@
+<style>
+/* Theme toggle button */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  background: var(--body-background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Light theme overrides */
+[data-theme="light"] {
+  --body-background-color: #fff;
+  --sidebar-color: #f5f6fa;
+  --body-text-color: #27262b;
+  --body-heading-color: #27262b;
+  --link-color: #7253ed;
+  --border-color: #eeebee;
+  --code-background-color: #f5f6fa;
+  --search-background-color: #fff;
+  --table-background-color: #fff;
+  --feedback-color: #27262b;
+}
+
+/* Dark theme (default) */
+[data-theme="dark"] {
+  --body-background-color: #27262b;
+  --sidebar-color: #302d36;
+  --body-text-color: #e6e1e8;
+  --body-heading-color: #f5f6fa;
+  --link-color: #897ae3;
+  --border-color: #44434d;
+  --code-background-color: #302d36;
+  --search-background-color: #302d36;
+  --table-background-color: #302d36;
+  --feedback-color: #e6e1e8;
+}
+
+@media (max-width: 800px) {
+  .theme-toggle {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 36px;
+    height: 36px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create toggle button
+  const toggleBtn = document.createElement('button');
+  toggleBtn.className = 'theme-toggle';
+  toggleBtn.setAttribute('aria-label', 'Toggle dark/light mode');
+  toggleBtn.innerHTML = '🌙';
+  document.body.appendChild(toggleBtn);
+
+  // Get saved theme or default to dark
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateIcon(savedTheme);
+
+  // Toggle handler
+  toggleBtn.addEventListener('click', function() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateIcon(newTheme);
+  });
+
+  function updateIcon(theme) {
+    toggleBtn.innerHTML = theme === 'dark' ? '☀️' : '🌙';
+  }
+});
+</script>
