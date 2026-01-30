@@ -273,31 +273,3 @@ button.theme-toggle {
   document.documentElement.setAttribute('data-theme', savedTheme);
 })();
 </script>
-
-<!-- Theme toggle button inserted directly in HTML for reliability -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Create toggle button
-  var toggleBtn = document.createElement('button');
-  toggleBtn.id = 'theme-toggle-btn';
-  toggleBtn.className = 'theme-toggle';
-  toggleBtn.setAttribute('aria-label', 'Toggle dark/light mode');
-  toggleBtn.setAttribute('type', 'button');
-  
-  // Get current theme
-  var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-  toggleBtn.textContent = currentTheme === 'dark' ? '\u2600' : '\u263D';
-
-  // Toggle handler
-  toggleBtn.addEventListener('click', function() {
-    var theme = document.documentElement.getAttribute('data-theme');
-    var newTheme = theme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    this.textContent = newTheme === 'dark' ? '\u2600' : '\u263D';
-  });
-
-  // Append to body
-  document.body.appendChild(toggleBtn);
-});
-</script>
