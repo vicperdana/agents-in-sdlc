@@ -1,5 +1,6 @@
 <ul class="nav-list">
-  {% for node in site.html_pages %}
+  {% assign sorted_pages = site.html_pages | sort: "nav_order" %}
+  {% for node in sorted_pages %}
     {% unless node.nav_exclude %}
       {% if node.title %}
     <li class="nav-list-item">
