@@ -1,8 +1,6 @@
 <style>
 /* Theme toggle button - positioned top-right for visibility */
-#theme-toggle-btn,
-.theme-toggle,
-button.theme-toggle {
+#theme-toggle-btn {
   position: fixed !important;
   top: 16px !important;
   right: 24px !important;
@@ -30,8 +28,7 @@ button.theme-toggle {
   margin: 0 !important;
 }
 
-#theme-toggle-btn:hover,
-.theme-toggle:hover {
+#theme-toggle-btn:hover {
   transform: scale(1.1) !important;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
 }
@@ -101,7 +98,7 @@ button.theme-toggle {
   background-image: none !important;
 }
 
-[data-theme="light"] .side-bar *:not(.theme-toggle) {
+[data-theme="light"] .side-bar *:not(#theme-toggle-btn) {
   color: #27262b !important;
 }
 
@@ -252,12 +249,12 @@ button.theme-toggle {
   color: #7253ed !important;
 }
 
-[data-theme="light"] .theme-toggle {
+[data-theme="light"] #theme-toggle-btn {
   background: #27262b !important;
 }
 
 @media (max-width: 800px) {
-  .theme-toggle {
+  #theme-toggle-btn {
     top: 0.5rem;
     right: 0.5rem;
     width: 44px;
