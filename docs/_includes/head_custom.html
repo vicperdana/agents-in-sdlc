@@ -1,29 +1,39 @@
 <style>
 /* Theme toggle button - positioned top-right for visibility */
-.theme-toggle {
+#theme-toggle-btn,
+.theme-toggle,
+button.theme-toggle {
   position: fixed !important;
-  top: 1rem !important;
-  right: 1.5rem !important;
-  z-index: 99999 !important;
-  background: #7253ed !important;
+  top: 16px !important;
+  right: 24px !important;
+  z-index: 999999 !important;
+  background-color: #7253ed !important;
   border: 2px solid #fff !important;
   border-radius: 50% !important;
   width: 48px !important;
   height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
   cursor: pointer !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   font-size: 1.4rem !important;
+  line-height: 1 !important;
   transition: all 0.3s ease !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
   visibility: visible !important;
   opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
+#theme-toggle-btn:hover,
 .theme-toggle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
 }
 
 /* Light theme overrides for just-the-docs */
@@ -257,44 +267,37 @@
 </style>
 
 <script>
-{% raw %}
+// Apply saved theme immediately to prevent flash
 (function() {
-  function createToggle() {
-    // Check if already exists
-    if (document.querySelector('.theme-toggle')) return;
-
-    // Create toggle button
-    var toggleBtn = document.createElement('button');
-    toggleBtn.className = 'theme-toggle';
-    toggleBtn.setAttribute('aria-label', 'Toggle dark/light mode');
-    toggleBtn.setAttribute('type', 'button');
-    toggleBtn.style.cssText = 'position:fixed!important;top:1rem!important;right:1.5rem!important;z-index:99999!important;background:#7253ed!important;border:2px solid #fff!important;border-radius:50%!important;width:48px!important;height:48px!important;cursor:pointer!important;display:flex!important;align-items:center!important;justify-content:center!important;font-size:1.4rem!important;';
-
-    // Get saved theme or default to dark
-    var savedTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    toggleBtn.textContent = savedTheme === 'dark' ? '\u2600\uFE0F' : '\uD83C\uDF19';
-
-    // Toggle handler
-    toggleBtn.onclick = function() {
-      var currentTheme = document.documentElement.getAttribute('data-theme');
-      var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      toggleBtn.textContent = newTheme === 'dark' ? '\u2600\uFE0F' : '\uD83C\uDF19';
-    };
-
-    document.body.appendChild(toggleBtn);
-  }
-
-  // Try multiple methods to ensure button is created
-  if (document.body) {
-    createToggle();
-  } else {
-    document.addEventListener('DOMContentLoaded', createToggle);
-  }
-  // Fallback
-  window.addEventListener('load', createToggle);
+  var savedTheme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
 })();
-{% endraw %}
+</script>
+
+<!-- Theme toggle button inserted directly in HTML for reliability -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create toggle button
+  var toggleBtn = document.createElement('button');
+  toggleBtn.id = 'theme-toggle-btn';
+  toggleBtn.className = 'theme-toggle';
+  toggleBtn.setAttribute('aria-label', 'Toggle dark/light mode');
+  toggleBtn.setAttribute('type', 'button');
+  
+  // Get current theme
+  var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+  toggleBtn.textContent = currentTheme === 'dark' ? '\u2600' : '\u263D';
+
+  // Toggle handler
+  toggleBtn.addEventListener('click', function() {
+    var theme = document.documentElement.getAttribute('data-theme');
+    var newTheme = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    this.textContent = newTheme === 'dark' ? '\u2600' : '\u263D';
+  });
+
+  // Append to body
+  document.body.appendChild(toggleBtn);
+});
 </script>
