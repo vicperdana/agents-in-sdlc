@@ -1,5 +1,5 @@
 ---
-nav_exclude: true
+nav_order: 4
 ---
 
 # Exercise 2 - Setting up the backlog with Copilot agent mode and GitHub's MCP Server
