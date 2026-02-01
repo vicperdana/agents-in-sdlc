@@ -86,7 +86,7 @@ Once you have the extension installed, you may need to authenticate with your Gi
     ![Example of selecting the Claude Haiku model](images/copilot-agent-mode-model.png)
 
 > [!IMPORTANT]
-> For this lab, we recommend using Claude Haiku. Haiku is optimized for tool-use and structured tasks like creating GitHub issues via MCP, providing excellent performance at a lower cost compared to more powerful models. The code suggestions you receive will be consistent and reliable. However, because LLMs are probabilistic, you may notice slight variations in the suggestions. This is perfectly normal and expected.
+> For this lab, you can use Claude Haiku or another available model. When building this lab, we used Claude Haiku. The hope is the code suggestions you receive will be relatively consistent to ensure a good experience. However, because LLMs are probabilistic, you may notice the suggestions received differ from what is indicated in the lab. This is perfectly normal and expected.
 
 8. The chat pane should update to indicate that you are now in agent mode. You should see a tools icon, showing that we can configure tools for GitHub Copilot to use.
 
