@@ -1,5 +1,5 @@
 ---
-nav_exclude: true
+nav_order: 7
 ---
 
 # Exercise 5: Review GitHub Copilot coding agent's work

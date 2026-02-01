@@ -1,5 +1,5 @@
 ---
-nav_exclude: true
+nav_order: 2
 ---
 
 # Exercise 0: Prerequisites
