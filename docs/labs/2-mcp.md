@@ -81,12 +81,12 @@ Once you have the extension installed, you may need to authenticate with your Gi
 
     ![Example of switching to agent mode](images/copilot-agent-mode-dropdown.png)
 
-7. Set the model to **Claude Sonnet 4**.
+7. Set the model to **Claude Haiku**.
 
-    ![Example of selecting the Claude Sonnet 4 model](images/copilot-agent-mode-model.png)
+    ![Example of selecting the Claude Haiku model](images/copilot-agent-mode-model.png)
 
 > [!IMPORTANT]
-> The authors of this lab are not indicating a preference towards one model or another. When building this lab, we used Claude Sonnet 4, and as such are including that in the instructions. The hope is the code suggestions you receive will be relatively consistent to ensure a good experience. However, because LLMs are probabilistic, you may notice the suggestions received differ from what is indicated in the lab. This is perfectly normal and expected.
+> For this lab, we recommend using Claude Haiku. Haiku is optimized for tool-use and structured tasks like creating GitHub issues via MCP, providing excellent performance at a lower cost compared to more powerful models. The code suggestions you receive will be consistent and reliable. However, because LLMs are probabilistic, you may notice slight variations in the suggestions. This is perfectly normal and expected.
 
 8. The chat pane should update to indicate that you are now in agent mode. You should see a tools icon, showing that we can configure tools for GitHub Copilot to use.
 
@@ -152,7 +152,7 @@ That's it! You can now use Copilot Chat in agent mode to create issues, manage p
 
 Now that you have set up the GitHub MCP server, you can use Copilot Agent mode to create a backlog of tasks for use in the rest of the lab.
 
-1. Return to the Copilot Chat pane. Select **Agent** from the dropdown list. Set the model to **Claude Sonnet 4**.
+1. Return to the Copilot Chat pane. Select **Agent** from the dropdown list. Set the model to **Claude Haiku**.
 
     ![Example of the Copilot Chat pane with Agent Mode selected](images/copilot-agent-mode-dropdown.png)
 
