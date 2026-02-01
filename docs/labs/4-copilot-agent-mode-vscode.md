@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Exercise 4 - Adding new functionality with Copilot Agent Mode
 
 

@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Exercise 1 - GitHub Copilot coding agent
 
 

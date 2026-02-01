@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Exercise 3 - Providing context to Copilot with instruction files
 
 

@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Exercise 5: Review GitHub Copilot coding agent's work
 
 
