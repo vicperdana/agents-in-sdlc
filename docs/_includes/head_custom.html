@@ -1,4 +1,177 @@
 <style>
+/* Hero Banner */
+.hero-banner {
+  background: linear-gradient(135deg, #7253ed 0%, #4a2dc9 50%, #2d1b69 100%);
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #fff !important;
+  margin-bottom: 0.75rem !important;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem !important;
+  color: rgba(255,255,255,0.85) !important;
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto !important;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: #fff;
+  color: #7253ed !important;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  background: #f0ecff;
+}
+
+/* Exercise Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.card {
+  background: #23222a;
+  border: 1px solid #3a3a4a;
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.card:hover {
+  border-color: #7253ed;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(114, 83, 237, 0.2);
+}
+
+.card-icon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.card-body h3 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #e8e8e8 !important;
+  margin: 0 0 0.35rem 0 !important;
+}
+
+.card-body p {
+  font-size: 0.85rem !important;
+  color: #a0a0b0 !important;
+  margin: 0 !important;
+  line-height: 1.5;
+}
+
+.card-body .label {
+  font-size: 0.65rem !important;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 600;
+  vertical-align: middle;
+  margin-left: 0.35rem;
+}
+
+.label-green {
+  background: rgba(46, 160, 67, 0.2);
+  color: #3fb950 !important;
+}
+
+.label-yellow {
+  background: rgba(210, 153, 34, 0.2);
+  color: #d29922 !important;
+}
+
+/* Light theme overrides for hero */
+[data-theme="light"] .hero-title {
+  color: #fff !important;
+}
+
+[data-theme="light"] .hero-subtitle {
+  color: rgba(255,255,255,0.85) !important;
+}
+
+/* Light theme overrides for cards and hero */
+[data-theme="light"] .card {
+  background: #fff;
+  border-color: #e0e0e0;
+}
+
+[data-theme="light"] .card:hover {
+  border-color: #7253ed;
+  box-shadow: 0 4px 16px rgba(114, 83, 237, 0.15);
+}
+
+[data-theme="light"] .card-body h3 {
+  color: #27262b !important;
+}
+
+[data-theme="light"] .card-body p {
+  color: #666 !important;
+}
+
+[data-theme="light"] .label-green {
+  background: rgba(46, 160, 67, 0.1);
+  color: #1a7f37 !important;
+}
+
+[data-theme="light"] .label-yellow {
+  background: rgba(210, 153, 34, 0.1);
+  color: #9a6700 !important;
+}
+
+@media (max-width: 600px) {
+  .hero-title { font-size: 1.75rem !important; }
+  .hero-subtitle { font-size: 1rem !important; }
+  .hero-banner { padding: 2rem 1.25rem; }
+  .card-grid { grid-template-columns: 1fr; }
+}
+
 /* Theme toggle button - positioned top-right for visibility */
 #theme-toggle-btn {
   position: fixed !important;
