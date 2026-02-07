@@ -16,5 +16,20 @@ color_scheme: dark
 search_enabled: true
 nav_sort: case_insensitive
 
+# Callouts configuration
+callouts:
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+  important:
+    title: Important
+    color: blue
+  tip:
+    title: Tip
+    color: green
+
 # Enable dark/light mode toggle
 # Requires custom head include for the toggle button
