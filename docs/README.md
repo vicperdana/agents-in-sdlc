@@ -1,6 +1,6 @@
 # Agents in the software development lifecycle (SDLC)
 
-> **Live Documentation:** This workshop documentation is deployed to a custom domain. See the repository's GitHub Pages settings for the current URL.
+> **Live Documentation:** This workshop documentation is published at [https://vicperdana.com](https://vicperdana.com)
 
 The recent additions to the capabilities of GitHub Copilot provide powerful tools to the developer across the entire software development lifecycle (SDLC). This includes working with issues and pull requests on GitHub, interacting with external services, and of course code creation. This lab explores the functionality, providing real-world use cases and tips on how to get the most out of the tools.
 

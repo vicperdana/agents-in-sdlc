@@ -8,7 +8,8 @@ To begin the workshop, start at [docs/README.md](./docs/README.md)
 
 ## Documentation
 
-The complete workshop documentation is automatically published at GitHub Pages. See the repository's GitHub Pages settings for the current URL.
+The complete workshop documentation is automatically published at GitHub Pages and available at:
+**https://vicperdana.com**
 
 The documentation is automatically deployed from the `docs/` directory when changes are pushed to main.
 
