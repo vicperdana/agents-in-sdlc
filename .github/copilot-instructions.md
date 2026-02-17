@@ -68,6 +68,6 @@ This is a crowdfunding platform for games with a developer theme. The applicatio
 - `data/`: Database files
 - `docs/`: Project documentation
   - Jekyll-based workshop documentation
-  - Automatically deployed to GitHub Pages (see repository Pages settings for URL)
+  - Automatically deployed to GitHub Pages: https://vicperdana.com
   - Deployment triggered on pushes to main when docs/ changes
 - `README.md`: Project documentation
